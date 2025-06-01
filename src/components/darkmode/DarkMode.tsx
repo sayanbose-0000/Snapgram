@@ -13,7 +13,6 @@ const DarkMode = () => {
 
     document.documentElement.setAttribute("data-theme", currTheme || "dark");
 
-
     if (currTheme === "dark") {
       themeSelector.checked = true;
     }

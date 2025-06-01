@@ -1,7 +1,10 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
 @plugin "daisyui" {
-  themes: light --default, black --prefersdark, cupcake;
+  themes: light --default, forest --prefersdark, cupcake;
 }
+
 
 body {
   background: var(--background);

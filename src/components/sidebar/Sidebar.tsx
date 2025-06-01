@@ -22,18 +22,20 @@ const Sidebar = () => {
           {
             sideBarList.map((items, idx) => (
               <React.Fragment key={idx}>
-                <li className={`flex flex-row items-center ${pathname === items.linkTo && "bg-accent rounded-sm"}`}>
-                  <Link href={items.linkTo} className="w-full">
+                <li className={`flex flex-row items-center ${pathname === items.linkTo && "bg-neutral text-neutral-content rounded-sm"}`}>
+                  <Link href={items.linkTo} className="w-full rounded-sm">
                     <items.icon />
                     <p>{items.title}</p>
                   </Link>
                 </li>
-                {items.divider && <div className="w-full h-0.5 bg-base-300 mt-2 mb-2" />}
+                {/* {items.divider && <div className="w-full h-0.5 bg-base-300 mt-2 mb-2" />} */}
+                {items.divider && <div className="divider m-1"></div>}
               </React.Fragment>
             ))
           }
 
-          <div className="w-full h-0.5 bg-base-300 mt-auto" />
+          {/* <div className="w-full h-0.5 bg-base-300 mt-auto" /> */}
+          <div className="divider mt-auto mb-1"></div>
 
           <li className=" flex flex-row justify-start items-center">
             <span>Dark Mode</span>

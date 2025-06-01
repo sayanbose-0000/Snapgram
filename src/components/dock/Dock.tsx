@@ -15,8 +15,8 @@ const Dock = () => {
           if (items.title == "Settings") return null;
 
           return (
-            <li key={idx} className={`flex flex-row justify-center items-center ${pathname === items.linkTo ? "dock-active" : ""}`}>
-              <Link href={items.linkTo}>
+            <li key={idx} className={`flex flex-row justify-center items-center ${pathname === items.linkTo ? "bg-neutral" : ""}`}>
+              <Link href={items.linkTo} className={`${pathname === items.linkTo ? "scale-110" : ""}`}>
                 <items.icon />
               </Link>
             </li>

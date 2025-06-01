@@ -14,7 +14,8 @@ const Navbar = () => {
         </div>
 
       </nav>
-      <div className="w-full h-0.5 bg-base-300" />
+      {/* <div className="w-full h-0.5 bg-base-300" /> */}
+      <div className="divider h-0 m-0"></div>
     </header>
   );
 };

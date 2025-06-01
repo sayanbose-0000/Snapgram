@@ -1,9 +1,9 @@
 import { archivo } from "@/fonts/font";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Snapgram- Login",
+  title: "Snapgram - Login",
   description: "Login Page for Snpgram",
 };
 

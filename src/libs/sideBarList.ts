@@ -1,4 +1,4 @@
-import { Bell, House, Search, Settings, Star, User } from "lucide-react";
+import { Bell, Home, Search, Settings, Star, User } from "lucide-react";
 
 interface SideBarItem {
   title: string,
@@ -8,7 +8,7 @@ interface SideBarItem {
 };
 
 const sideBarList: SideBarItem[] = [
-  { title: "My Feed", linkTo: "/", icon: House },
+  { title: "My Feed", linkTo: "/", icon: Home },
   { title: "Search", linkTo: "/search", icon: Search },
   { title: "Notifications", linkTo: "/notifications", icon: Bell },
   { title: "Bookmarks", linkTo: "/bookmarks", icon: Star, divider: true },
