@@ -5,7 +5,8 @@ interface IUserSchema {
   fullName: string,
   email: string,
   bio: string,
-  dp: string;
+  dp: string,
+  joinedOn: Date,
 }
 
 const UserSchema: Schema<IUserSchema> = new Schema({
@@ -34,6 +35,11 @@ const UserSchema: Schema<IUserSchema> = new Schema({
   dp: {
     type: String,
     required: [true, "Dp is required"]
+  },
+
+  joinedOn: {
+    type: Date,
+    default: Date.now
   }
 }, { timestamps: true });
 

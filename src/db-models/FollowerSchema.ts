@@ -10,19 +10,19 @@ const FollowerSchema: Schema<IFollowerSchema> = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: "snapgram_users",
-    required: [true, "UserId is required"]
+    required: [true, "User is required"]
   },
 
   followerId: {
     type: Schema.Types.ObjectId,
     ref: "snapgram_users",
-    required: [true, "UserId is required"]
+    required: [true, "Follower is required"]
   },
 
   followingId: {
     type: Schema.Types.ObjectId,
     ref: "snapgram_users",
-    required: [true, "UserId is required"]
+    required: [true, "Following is required"]
   }
 }, { timestamps: true });
 
