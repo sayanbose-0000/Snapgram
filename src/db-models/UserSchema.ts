@@ -1,27 +1,34 @@
 import { model, Model, models, Schema } from "mongoose";
 
 interface IUserSchema {
-  userId: string,
   username: string,
+  fullName: string,
   email: string,
+  bio: string,
   dp: string;
 }
 
 const UserSchema: Schema<IUserSchema> = new Schema({
-  userId: {
+  username: {
     type: String,
-    required: [true, "UserId is required"],
+    required: [true, "Username is required"],
     unique: true
   },
 
-  username: {
+  fullName: {
     type: String,
-    required: [true, "Username is required"]
+    required: [true, "Full Name is required"],
   },
 
   email: {
     type: String,
-    required: [true, "Email is required"]
+    required: [true, "Email is required"],
+    unique: true
+  },
+
+  bio: {
+    type: String,
+    required: [true, "Bio is required"]
   },
 
   dp: {
