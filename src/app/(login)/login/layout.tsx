@@ -1,4 +1,4 @@
-import { archivo } from "@/fonts/font";
+import { inter } from "@/fonts/font";
 import { Metadata } from "next";
 import "@/styles/globals.css";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const LoginLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   return (
     <html lang="en" data-theme="black">
-      <body className={`${archivo.className} antialiased`}>
+      <body className={`${inter.className}`}>
           {children}
       </body>
     </html>

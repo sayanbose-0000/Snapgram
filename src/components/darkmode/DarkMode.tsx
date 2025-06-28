@@ -1,43 +1,28 @@
-"use client";
-
-import { useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const DarkMode = () => {
-  useEffect(() => {
-    const currTheme = localStorage.getItem("theme");
-    const themeSelector = document.querySelector(".darkModeToggle") as HTMLInputElement | null;
-
-    if (!themeSelector) {
-      return;
-    }
-
-    document.documentElement.setAttribute("data-theme", currTheme || "dark");
-
-    if (currTheme === "dark") {
-      themeSelector.checked = true;
-    }
-    else {
-      themeSelector.checked = false;
-    }
-  }, []);
+  const { theme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
-    const themeSelector = document.querySelector(".darkModeToggle") as HTMLInputElement;
-    if (themeSelector.checked) { // dark mode
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-      themeSelector.checked = true;
-    }
 
-    else {
-      document.documentElement.setAttribute("data-theme", "cupcake");
-      localStorage.setItem("theme", "cupcake");
-      themeSelector.checked = false;
+    if (theme === "forest") {
+      setTheme("cupcake");
+    } else {
+      setTheme("forest");
     }
   };
 
   return (
-    <input type="checkbox" className="darkModeToggle toggle toggle-lg" onClick={handleThemeChange} />
+    <div className="flex w-full justify-between items-center">
+      <p>Theme</p>
+
+      <div className="flex gap-1">
+        <Sun className="scale-75" />
+        <input type="checkbox" value="forest" className="toggle theme-controller" onChange={handleThemeChange} checked={theme === "forest"} />
+        <Moon className="scale-75" />
+      </div>
+    </div>
   );
 };
 

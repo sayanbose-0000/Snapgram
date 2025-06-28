@@ -1,6 +1,6 @@
 "use client";
 
-import { sideBarList } from "@/libs/sideBarList";
+import { dockList } from "@/libs/dockList";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,13 +9,11 @@ const Dock = () => {
   console.log(pathname);
 
   return (
-    <div className="dock sm:hidden">
+    <div className="dock lp:hidden lg-tb:w-lg rounded-2xl mx-auto">
       {
-        sideBarList.map((items, idx) => {
-          if (items.title == "Settings") return null;
-
+        dockList.map((items, idx) => {
           return (
-            <li key={idx} className={`flex flex-row justify-center items-center ${pathname === items.linkTo ? "bg-neutral" : ""}`}>
+            <li key={idx} className={`flex flex-row justify-center items-center ${pathname === items.linkTo ? "bg-neutral text-neutral-content" : ""}`}>
               <Link href={items.linkTo} className={`${pathname === items.linkTo ? "scale-110" : ""}`}>
                 <items.icon />
               </Link>

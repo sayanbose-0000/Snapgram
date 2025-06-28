@@ -1,17 +1,32 @@
-import { jetBrainsMono } from "@/fonts/font";
+import { pacifico, jetBrainsMono } from "@/fonts/font";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Bell, CirclePlus, Menu } from "lucide-react";
 
 const Navbar = () => {
   return (
     <header className={`${jetBrainsMono.className}`}>
-      <nav className="navbar bg-base-100 flex justify-start items-center min-h-0 p-2.5">
-        <label htmlFor="sidebar-drawer" className="drawer-button block sm:hidden">
-        </label>
+      <nav className="navbar bg-base-100 flex justify-between items-center min-h-0 p-2.5 sm:hidden">
+        {/* <label htmlFor="sidebar-drawer" className="drawer-button block sm:hidden"> */}
+        {/* </label> */}
 
-        <div className="ml-auto mr-auto text-xl font-bold">
-          <Link href={"/"} className="ml-auto mr-auto">Snapgram</Link>
+        <div className="text-2xl font-extrabold">
+          <Link href={"/"} className={`${pacifico.className}`}>Snapgram</Link>
         </div>
+
+        <ul className="flex gap-2">
+          <li>
+            <Link href={"/create"} className="w-full rounded-sm">
+              <CirclePlus />
+            </Link>
+          </li>
+
+          <li>
+            <Link href={"/notifications"} className="w-full rounded-sm">
+              <Bell />
+            </Link>
+          </li>
+        </ul>
+
 
       </nav>
       {/* <div className="w-full h-0.5 bg-base-300" /> */}

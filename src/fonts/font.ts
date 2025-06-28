@@ -1,13 +1,18 @@
-import { Archivo, JetBrains_Mono } from "next/font/google";
+import { Pacifico, JetBrains_Mono, Inter } from "next/font/google";
 
-const archivo = Archivo({
-  weight: ["400"],
+const inter = Inter({
+  weight: ["500"],
   subsets: ["latin"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
-  weight: ["400"],
+  weight: ["500"],
   subsets: ["latin"]
 });
 
-export { archivo, jetBrainsMono };
+const pacifico = Pacifico({
+  weight:  ["400"],
+  subsets: ["latin"]
+})
+
+export { inter, jetBrainsMono, pacifico };
