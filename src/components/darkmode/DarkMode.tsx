@@ -5,7 +5,6 @@ const DarkMode = () => {
   const { theme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
-
     if (theme === "forest") {
       setTheme("cupcake");
     } else {
@@ -19,7 +18,7 @@ const DarkMode = () => {
 
       <div className="flex gap-1">
         <Sun className="scale-75" />
-        <input type="checkbox" value="forest" className="toggle theme-controller" onChange={handleThemeChange} checked={theme === "forest"} />
+        <input type="checkbox" value="forest" className="toggle theme-controller border-2" onChange={handleThemeChange} checked={theme === "forest"} />
         <Moon className="scale-75" />
       </div>
     </div>

@@ -13,11 +13,26 @@
   --breakpoint-lg-tb: 530px;
   --breakpoint-lp: 768px;
   --breakpoint-lg-lp: 1024px;
+  --breakpoint-vlg-lp: 1400px;
+
   --color-dark-line: oklab(0.83768 0.000951535 0.000307539 / 0.1);
-  --color-light-line: oklab(0.23574 0.0451709 -0.0481206 / 0.1)
+  --color-light-line: oklab(0.23574 0.0451709 -0.0481206 / 0.1);
+  --color-base-300: oklch(70% 0 0);
 }
 
-html {
+@layer utilities {
+  .comments-scroll-container {
+    /* 
+      GPU compositing to avoid sub‑pixel glitches 
+      A performance gain is achieved in 'tricking' the GPU to think that an element 
+      is 3D by using transform: translateZ(0) to speed up animations and transitions 
+      Fixes the top and bottom most element cut off on scrolling fast 
+    */
+    transform: translateZ(0);
+  }
+}
+
+* {
   scrollbar-width: thin;
 }
 
@@ -26,4 +41,3 @@ body {
   color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
 }
-

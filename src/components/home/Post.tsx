@@ -1,9 +1,11 @@
 import { Heart, MessageCircle, Send, Star } from "lucide-react";
 import Image from "next/image";
+import CommentsModal from "../modals/CommentsModal";
+import ShareModal from "../modals/ShareModal";
 
 const Post = () => {
   return (
-    <li className="rounded-md p-2 m-2 cursor-pointer lg-tb:w-sm lp:w-sm lg-lp:w-lg">
+    <li className="rounded-md p-2 m-2 lg-tb:w-sm lp:w-sm lg-lp:w-lg">
       <div className="author_details flex gap-2 justify-start items-center p-1">
         <div className="avatar">
           <div className="w-8 rounded-full">
@@ -18,7 +20,7 @@ const Post = () => {
       </div>
 
       <div className="post p-1">
-        <div className="card shadow-sm dark:bg-accent-content rounded-md">
+        <div className="card shadow-sm dark:bg-accent-content rounded-md ">
           <figure>
             <Image src="https://images.pexels.com/photos/753266/pexels-photo-753266.jpeg" alt="Post Image" height={2000} width={2000} className="object-cover h-full w-full" />
           </figure>
@@ -38,9 +40,9 @@ const Post = () => {
             </div>
             <div className="card-actions flex justify-start items-center mt-2 *:p-0 *:h-fit *:w-fit *:bg-transparent *:border-none">
               <button className="btn"><Heart /></button>
-              <button className="btn"><MessageCircle /></button>
-              <button className="btn"><Send /></button>
-              <button className="btn ml-auto"><Star /></button>
+              <CommentsModal />
+              <ShareModal />
+              <button className="btn ml-auto shadow-none"><Star /></button>
             </div>
           </div>
         </div>

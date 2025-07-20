@@ -5,7 +5,7 @@ import { Bell, CirclePlus, Menu } from "lucide-react";
 const Navbar = () => {
   return (
     <header className={`${jetBrainsMono.className}`}>
-      <nav className="navbar bg-base-100 flex justify-between items-center min-h-0 p-2.5 sm:hidden">
+      <nav className="navbar bg-base-100 flex justify-between items-center min-h-0 p-2.5 lp:hidden">
         {/* <label htmlFor="sidebar-drawer" className="drawer-button block sm:hidden"> */}
         {/* </label> */}
 

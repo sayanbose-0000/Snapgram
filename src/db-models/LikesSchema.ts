@@ -8,6 +8,7 @@ interface ILikesSchema {
 const LikesSchema: Schema<ILikesSchema> = new Schema({
   post: {
     type: Schema.Types.ObjectId,
+    ref: "snapgram_posts",
     required: [true, "Post Id is requried"],
   },
 

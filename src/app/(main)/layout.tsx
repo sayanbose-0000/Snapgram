@@ -24,7 +24,9 @@ const MainLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
           <Navbar />
           <section className="flex flex-grow">
             <Sidebar />
-            {children}
+            <main className="overflow-y-auto w-full flex flex-col items-center">
+              {children}
+            </main>
             <DetailsBar />
           </section>
           <Dock />
