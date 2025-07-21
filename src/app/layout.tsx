@@ -1,7 +1,6 @@
 import { inter } from "@/fonts/font";
 import { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import Navbar from "@/components/navbar/Navbar";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Dock from "@/components/dock/Dock";
 import DetailsBar from "@/components/details/DetailsBar";
@@ -21,14 +20,9 @@ const MainLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     <html lang="en" data-theme="forest" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider defaultTheme="forest">
-          {/* <Navbar /> */}
-          <section className="flex flex-grow ">
-            <Sidebar />
             <main className="overflow-y-auto w-full flex flex-col items-center">
               {children}
             </main>
-            <DetailsBar />
-          </section>
           <Dock />
         </ThemeProvider>
       </body>

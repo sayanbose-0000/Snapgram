@@ -5,7 +5,7 @@ import ShareModal from "../modals/ShareModal";
 
 const Post = () => {
   return (
-    <li className="rounded-md p-2 m-2 lg-tb:w-sm lp:w-sm lg-lp:w-lg">
+    <li className="rounded-xl p-2 m-2 lg-tb:w-sm lp:w-sm lg-lp:w-lg">
       <div className="author_details flex gap-2 justify-start items-center p-1">
         <div className="avatar">
           <div className="w-8 rounded-full">
@@ -19,9 +19,9 @@ const Post = () => {
         </div>
       </div>
 
-      <div className="post p-1">
-        <div className="card shadow-sm dark:bg-accent-content rounded-md ">
-          <figure>
+      <div className="post p-1 dark:bg-gray-950 rounded-xl">
+        <div className="card shadow-sm dark:bg-accent-content rounded-xl ">
+          <figure className="">
             <Image src="https://images.pexels.com/photos/753266/pexels-photo-753266.jpeg" alt="Post Image" height={2000} width={2000} className="object-cover h-full w-full" />
           </figure>
           <div className="card-body">

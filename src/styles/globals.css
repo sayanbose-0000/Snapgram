@@ -5,7 +5,11 @@
   themes: cupcake --default, forest --prefersdark;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=forest], [data-theme=forest] *));
+/* @config {
+  darkMode: "class";
+} */
+
 
 @theme {
   --breakpoint-mb: 320px;

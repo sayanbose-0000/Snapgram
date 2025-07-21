@@ -41,7 +41,7 @@ const Sidebar = () => {
           <div className="divider mt-auto mb-1"></div>
 
           {/* <li className="flex flex-row justify-start items-center"> */}
-            <DarkMode />
+          <DarkMode />
           {/* </li> */}
         </ul>
       </div>
@@ -49,4 +49,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar;;

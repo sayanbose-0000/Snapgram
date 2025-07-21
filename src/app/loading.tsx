@@ -2,7 +2,7 @@ import { jetBrainsMono } from "@/fonts/font";
 
 const loading = () => {
   return (
-    <main className={`flex-1 flex justify-center items-center flex-row gap-2 ${jetBrainsMono.className}`}>
+    <main className={`h-screen flex justify-center items-center flex-row gap-2 ${jetBrainsMono.className}`}>
       <p>Loading</p>
       <div className="flex">
         <p className="animate-bounce delay-0">.</p>

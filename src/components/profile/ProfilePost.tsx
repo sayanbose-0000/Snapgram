@@ -1,7 +1,7 @@
 import { Heart, MessageCircle, Send } from "lucide-react";
 import Image from "next/image";
 
-const Bookmark = () => {
+const ProfilePost = () => {
   return (
     <div className="post rounded-lg p-2 m-2 tb:w-52 lg-tb:w-52 lp:w-sm lg-lp:w-xs hover:cursor-pointer">
       <div className="card shadow-sm dark:bg-accent-content rounded-lg">
@@ -17,7 +17,8 @@ const Bookmark = () => {
         </figure>
       </div>
     </div>
+
   );
 };
 
-export default Bookmark;
+export default ProfilePost;
