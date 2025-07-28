@@ -1,4 +1,4 @@
-import { logOut } from "@/libs/authentication";
+import { logOut } from "@/libs/auth/authenticate";
 import { LogOut } from "lucide-react";
 
 const LogOutComp = () => {

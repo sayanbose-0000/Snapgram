@@ -7,12 +7,12 @@ const inter = Inter({
 
 const jetBrainsMono = JetBrains_Mono({
   weight: ["500"],
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const pacifico = Pacifico({
-  weight:  ["400"],
-  subsets: ["latin"]
-})
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 export { inter, jetBrainsMono, pacifico };

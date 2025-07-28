@@ -1,4 +1,4 @@
-import { Bell, CirclePlus, Home, Search, Settings, Star, User } from "lucide-react";
+import { Bell, CirclePlus, Home, Search, User } from "lucide-react";
 
 interface DockItem {
   title: string,

@@ -1,9 +1,7 @@
 import { inter } from "@/fonts/font";
 import { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import Sidebar from "@/components/sidebar/Sidebar";
 import Dock from "@/components/dock/Dock";
-import DetailsBar from "@/components/details/DetailsBar";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
@@ -11,11 +9,11 @@ export const metadata: Metadata = {
   description: "Social Media Platform For Everybody",
 };
 
-export const viewPort: Viewport = {
+export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-const MainLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   return (
     <html lang="en" data-theme="forest" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
@@ -30,4 +28,4 @@ const MainLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   );
 };
 
-export default MainLayout;
+export default RootLayout;

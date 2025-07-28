@@ -10,9 +10,11 @@ const CreatePage = () => {
 
         <label className="input my-2">
           <span className="label">Caption:</span>
-          <input type="text" placeholder="Your caption goes here..." />
+          <input type="text" placeholder="Enter caption..." />
         </label>
-        <button className="btn btn-success my-2" type="submit">Create</button>
+        <button className="btn btn-success my-2" type="submit">
+          Create
+        </button>
       </fieldset>
     </form>
   );

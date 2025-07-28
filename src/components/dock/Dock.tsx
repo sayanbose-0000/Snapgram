@@ -1,6 +1,6 @@
 "use client";
 
-import { dockList } from "@/libs/dockList";
+import { dockList } from "@/libs/lists/dockList";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

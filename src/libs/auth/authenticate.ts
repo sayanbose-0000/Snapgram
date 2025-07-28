@@ -1,4 +1,4 @@
-"use server"
+"use server";
 
 import { signIn, signOut } from "~/auth";
 
@@ -12,6 +12,6 @@ const githubSignIn = async () => {
 
 const logOut = async () => {
   await signOut();
-}
+};
 
 export { googleSignIn, githubSignIn, logOut };

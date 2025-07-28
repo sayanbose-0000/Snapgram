@@ -1,28 +1,46 @@
-import { jetBrainsMono, pacifico } from "@/fonts/font";
+import { jetBrainsMono } from "@/fonts/font";
 import React from "react";
 import Image from "next/image";
 import LogOutComp from "../logout/LogOutComp";
+import getUserDetails from "@/libs/auth/getUserDetails";
 
-const DetailsBar = () => {
+const DetailsBar = async () => {
+  const userDetails = await getUserDetails();
+
   return (
-    <div className={`drawer lp:drawer-open ${jetBrainsMono.className} w-fit h-screen fixed top-0 right-0 z-50 p-4`}>
-
-      <input id="sidebar-drawer" type="checkbox" className="drawer-toggle" placeholder="" />
+    <div
+      className={`drawer lp:drawer-open ${jetBrainsMono.className} w-fit h-screen fixed top-0 right-0 z-50 p-4`}
+    >
+      <input
+        id="sidebar-drawer"
+        type="checkbox"
+        className="drawer-toggle"
+        placeholder=""
+      />
 
       <div className="drawer-side h-full w-full">
-        <div className="author_details flex gap-2 justify-start items-center p-1">
-          <div className="avatar">
-            <div className="w-8 rounded-full">
-              <Image src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg" alt="Author DP" height={100} width={100} className="object-cover" />
-            </div>
+        <div className="author_details flex gap-2 justify-start items-center p-1 cursor-pointer">
+          <div className="avatar flex-shrink-0">
+            {userDetails && (
+              <div className="w-10 rounded-full">
+                <Image
+                  src={userDetails?.dp}
+                  alt="Author DP"
+                  height={100}
+                  width={100}
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
 
-          <div className="flex flex-col justify-center items-start text-sm">
-            <span>johndoe@gmail.com</span>
-            <span className="text-gray-500">johndoe45899</span>
+          <div className="flex flex-col justify-center items-start text-sm min-w-0 flex-1 w-48">
+            <span className="truncate w-full">{userDetails?.email}</span>
+            <span className="text-gray-500 truncate w-full">
+              {userDetails?.username}
+            </span>
           </div>
         </div>
-
         <LogOutComp />
       </div>
     </div>

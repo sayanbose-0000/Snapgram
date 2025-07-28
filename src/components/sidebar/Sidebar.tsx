@@ -2,7 +2,7 @@
 
 import { jetBrainsMono, pacifico } from "@/fonts/font";
 import Link from "next/link";
-import { sideBarList } from "@/libs/sideBarList";
+import { sideBarList } from "@/libs/lists/sideBarList";
 import React from "react";
 import DarkMode from "../darkmode/DarkMode";
 import { usePathname } from "next/navigation";
