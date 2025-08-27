@@ -1,9 +1,12 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IPostSchema {
+  _id?: Types.ObjectId,
   author: Types.ObjectId,
   imageUrl: string,
   caption: string,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const PostSchema: Schema<IPostSchema> = new Schema({
@@ -27,3 +30,4 @@ const PostSchema: Schema<IPostSchema> = new Schema({
 const PostModel: Model<IPostSchema> = models["snapgram_posts"] as Model<IPostSchema> || model<IPostSchema>("snapgram_posts", PostSchema);
 
 export default PostModel;
+export type { IPostSchema };

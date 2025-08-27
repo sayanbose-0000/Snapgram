@@ -1,8 +1,11 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface ILikesSchema {
+  _id?: Types.ObjectId,
   post: Types.ObjectId,
-  user: Types.ObjectId;
+  user: Types.ObjectId,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const LikesSchema: Schema<ILikesSchema> = new Schema({

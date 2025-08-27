@@ -1,9 +1,12 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface INotificationSchema {
+  _id?: Types.ObjectId,
   user: Types.ObjectId,
   message: string,
-  isRead: boolean;
+  isRead: boolean,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const NotificationSchema: Schema<INotificationSchema> = new Schema({

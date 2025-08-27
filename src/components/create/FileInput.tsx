@@ -1,15 +1,24 @@
 "use client";
 
+import { ImageKitProvider } from "@imagekit/next";
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
-const FileInput = () => {
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
+interface FileInputProps {
+  file: File | null,
+  setFile: (file: (File) | null) => void,
+  imagePreview: string | null,
+  setImagePreview: (url: string | null) => void,
+};
+
+const FileInput = ({ file, setFile, imagePreview, setImagePreview }: FileInputProps) => {
 
   const handleOnFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setImagePreview(URL.createObjectURL(file));
+    const currentFile = e.target.files?.[0];
+    setFile(currentFile || null);
+
+    if (currentFile) {
+      setImagePreview(URL.createObjectURL(currentFile));
     } else {
       setImagePreview(null);
     }
@@ -19,18 +28,21 @@ const FileInput = () => {
     <>
       <label htmlFor="img-input">
         {imagePreview && (
-          <Image
-            src={imagePreview}
-            height={500}
-            width={500}
-            alt="Image"
-            className="h-56 object-contain cursor-pointer"
-          />
+          <ImageKitProvider urlEndpoint={`https://ik.imagekit.io/${process.env.IMAGEKIT_ID}`}>
+            <Image
+              src={imagePreview}
+              height={500}
+              width={500}
+              alt="Upload Picture"
+              className="h-56 object-contain cursor-pointer"
+            />
+          </ImageKitProvider>
         )}
+
         <input
           id="img-input"
           type="file"
-          className="file-input file-input-ghost my-2"
+          className={`file-input file-input-ghost my-2 ${file && "hidden"}`}
           accept="image/*"
           onChange={handleOnFileUpload}
         />

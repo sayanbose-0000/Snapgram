@@ -1,8 +1,11 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IViewSchema {
+  _id?: Types.ObjectId,
   post: Types.ObjectId,
   user: Types.ObjectId,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const ViewSchema: Schema<IViewSchema> = new Schema({

@@ -1,9 +1,12 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IReplySchema {
+  _id?: Types.ObjectId,
   comment: Types.ObjectId,
   user: Types.ObjectId,
-  reply: string;
+  reply: string,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const ReplySchema: Schema<IReplySchema> = new Schema({

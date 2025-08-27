@@ -1,3 +1,5 @@
+"use server";
+
 import { User } from "next-auth";
 import connectDb from "./connectDb";
 import UserModel from "@/db-models/UserSchema";

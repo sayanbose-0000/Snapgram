@@ -1,6 +1,6 @@
 import { pacifico, jetBrainsMono } from "@/fonts/font";
 import Link from "next/link";
-import { Bell, CirclePlus, Menu } from "lucide-react";
+import { Bell, CirclePlus } from "lucide-react";
 
 const Navbar = () => {
   return (

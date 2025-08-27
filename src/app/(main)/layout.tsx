@@ -17,19 +17,19 @@ export const viewport: Viewport = {
 const MainLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   return (
     // <html lang="en" data-theme="forest" suppressHydrationWarning>
-      // <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <ThemeProvider defaultTheme="forest">
-          {/* <Navbar /> */}
-          <section className="flex flex-grow ">
-            <Sidebar />
-            <main className="overflow-y-auto w-full flex flex-col items-center">
-              {children}
-            </main>
-            <DetailsBar />
-          </section>
-          <Dock />
-        </ThemeProvider>
-      // </body>
+    // <body className={`${inter.className} flex flex-col min-h-screen`}>
+    <ThemeProvider defaultTheme="forest">
+      {/* <Navbar /> */}
+      <section className="flex flex-grow ">
+        <Sidebar />
+        <main className="overflow-y-auto w-full flex flex-col items-center">
+          {children}
+        </main>
+        <DetailsBar />
+      </section>
+      <Dock />
+    </ThemeProvider>
+    // </body>
     // </html>
   );
 };

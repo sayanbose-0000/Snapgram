@@ -9,6 +9,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async signIn({ user }) {
       const state: boolean = await saveUserDb(user);
       return state;
-    }
+    },
+
+    // async session({ session, user }) {
+    //   return {
+    //     ...session,
+    //     user: {
+    //       ...user
+    //     }
+    //   };
+    // }
   }
 });

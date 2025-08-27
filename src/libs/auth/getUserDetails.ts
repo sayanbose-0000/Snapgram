@@ -1,9 +1,10 @@
+"use server";
+
 import { auth } from "~/auth";
 import connectDb from "../db/connectDb";
 import UserModel, { IUserSchema } from "@/db-models/UserSchema";
-import { HydratedDocument } from "mongoose";
 
-let userDetails: HydratedDocument<IUserSchema> | null = null;
+let userDetails: IUserSchema | null = null;
 
 const getUserDetails = async () => {
   const session = await auth();
@@ -14,8 +15,9 @@ const getUserDetails = async () => {
     return userDetails;
   }
 
-  userDetails = await UserModel.findOne({ email: session?.user?.email });
-  console.log("userDetails fetched")
+  // .lean() converts userDetails to a plain object so that it can be sent to client component
+  userDetails = await UserModel.findOne({ email: session?.user?.email }).lean();
+  console.log("userDetails fetched");
   return userDetails;
 };
 

@@ -1,9 +1,12 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IFollowerSchema {
+  _id?: Types.ObjectId,
   userId: Types.ObjectId,
   followerId: Types.ObjectId,
-  followingId: Types.ObjectId;
+  followingId: Types.ObjectId,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const FollowerSchema: Schema<IFollowerSchema> = new Schema({

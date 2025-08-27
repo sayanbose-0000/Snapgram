@@ -1,26 +1,12 @@
-"use client";
+import getUserDetails from "@/libs/auth/getUserDetails";
+import DockCurrent from "./DockCurrent";
 
-import { dockList } from "@/libs/lists/dockList";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const Dock = () => {
-  const pathname = usePathname();
-  console.log(pathname);
+const Dock = async () => {
+  const user = await getUserDetails();
 
   return (
     <div className="dock lp:hidden lg-tb:w-lg rounded-2xl mx-auto">
-      {
-        dockList.map((items, idx) => {
-          return (
-            <li key={idx} className={`flex flex-row justify-center items-center ${pathname === items.linkTo ? "bg-neutral text-neutral-content" : ""}`}>
-              <Link href={items.linkTo} className={`${pathname === items.linkTo ? "scale-110" : ""}`}>
-                <items.icon />
-              </Link>
-            </li>
-          );
-        })
-      }
+      <DockCurrent username={user?.username}/>
     </div>
   );
 };

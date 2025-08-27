@@ -1,12 +1,15 @@
-import { model, Model, models, Schema } from "mongoose";
+import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IUserSchema {
+  _id?: Types.ObjectId,
   username: string;
   name: string;
   email: string;
   bio: string;
   dp: string;
-  joinedOn: Date;
+  joinedOn: Date,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const UserSchema: Schema<IUserSchema> = new Schema(

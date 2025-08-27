@@ -1,8 +1,11 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface ICommentsLikeSchema {
+  _id?: Types.ObjectId,
   comments: Types.ObjectId;
-  user: Types.ObjectId;
+  user: Types.ObjectId,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const CommentsLikeSchema: Schema<ICommentsLikeSchema> = new Schema(
@@ -21,8 +24,8 @@ const CommentsLikeSchema: Schema<ICommentsLikeSchema> = new Schema(
   { timestamps: true },
 );
 
-const LikesModel: Model<ICommentsLikeSchema> =
+const CommentsLikesModel: Model<ICommentsLikeSchema> =
   (models["snapgram_comments_likes"] as Model<ICommentsLikeSchema>) ||
   model<ICommentsLikeSchema>("snapgram_comments_likes", CommentsLikeSchema);
 
-export default LikesModel;
+export default CommentsLikesModel;

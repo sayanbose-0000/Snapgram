@@ -1,8 +1,11 @@
 import { model, Model, models, Schema, Types } from "mongoose";
 
 interface IReplyLikesSchema {
+  _id?: Types.ObjectId,
   comments: Types.ObjectId,
-  user: Types.ObjectId;
+  user: Types.ObjectId,
+  createdAt?: Date,
+  updatedAt?: Date;
 }
 
 const ReplyLikesSchema: Schema<IReplyLikesSchema> = new Schema({

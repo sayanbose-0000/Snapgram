@@ -18,9 +18,9 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     <html lang="en" data-theme="forest" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider defaultTheme="forest">
-            <main className="overflow-y-auto w-full flex flex-col items-center">
-              {children}
-            </main>
+          <main className="overflow-y-auto w-full flex flex-col items-center">
+            {children}
+          </main>
           <Dock />
         </ThemeProvider>
       </body>
